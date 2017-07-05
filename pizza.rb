@@ -3,7 +3,6 @@
 def num()
 	puts "How many pizzas would you like?"
 	x = gets.chomp.to_i
-
 end
 
 def crust()
@@ -12,8 +11,20 @@ def crust()
 end
 
 def sauce()
-	sauce = ["tomato","BBQ","Hot"].shuffle.first
+	sauce = ["tomato","bbq","hot"].shuffle.first
 	puts "Your sauce is #{sauce}"
+	#x = gets.chomp
+	#puts "Your sauce is #{sauce}"
+	#tomato = sauce[0]
+	#bbq = sauce[1]
+	#hot = sauce[2]
+	#if x = tomato
+	#	puts "You chose tomato"
+	#elsif x = bbq
+	#	puts "You chose bbq"
+	#else x = hot
+	#	puts "You chose hot"
+	#end
 end
 
 def cheese()
@@ -22,7 +33,7 @@ def cheese()
 end
 
 def meat()
-	meats = ['pepperoni','sausage','ground beef','bacon','Philly Steak','chicken'].shuffle.first
+	meats = ['pepperoni','sausage','ground beef','bacon','Philly Steak','chicken'].shuffle.first 
 	puts "Your meat is #{meats}"
 end
 
@@ -39,8 +50,42 @@ end
 @i=0
 def counter()
 	@i = @i + 1
-	z = @i * 10
-	puts "#{@i} pizzas ordered with the total being #{z}"
+	#z = @i * 10
+	puts "#{@i} pizzas ordered" #with the total being #{z}"
+end
+
+@cost = 0
+def size()
+	sizes = ['small','medium','large'].shuffle.first
+	puts "Your size is #{sizes}"
+	if sizes == 'small'
+		puts "Your total is #{@cost=@cost+5}"
+	elsif sizes == 'medium'
+		puts "Your total is #{@cost=@cost+10}"
+	else sizes == 'large'
+		puts "Your total is #{@cost=@cost+15}"
+	end
+end
+
+def delivery()
+	tip = 0
+	time = [1,2].shuffle.first
+	puts "Would you like your pies delivered? (Yes or No)"
+	x = gets.chomp
+	if x == "yes"
+		puts "Your total is now #{@cost=@cost+2}. It will be there in about 45 minutes. Thanks for your order."
+	else x == "no"
+		puts "Your order will be ready for pickup in 25 Minutes."
+	end
+	if time == 1
+		puts "Thanks for getting my pizza here in under 30 minutes, here is your tip #{tip=@cost*0.25}."
+	else time == 2
+		puts "Thanks for the pizza, here is yoru tip #{tip=@cost*0.15}"
+	end
+end
+
+def taxes()
+	puts "Your total after tax comes to #{@cost=(@cost*0.06)+@cost}"
 end
 
 num.times do
@@ -50,6 +95,10 @@ num.times do
 	veg
 	meat
 	special
+	size
 	counter
 puts "-----------------"
 end
+
+puts taxes()
+puts delivery()
