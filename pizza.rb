@@ -12,17 +12,18 @@ end
 
 def sauce()
 	sauce = ["tomato","bbq","hot"].shuffle.first
-		puts "Your sauce is #{sauce}"
-	#puts "Choose your sauce: 1 Tomato, 2 bbq, 3 hot"
-	#x = gets.chomp.to_i
-	#if x == 1
-	#puts "You chose tomato"
-	#elsif x == 2
-	#puts "You chose bbq"
-	#elsif x == 3
-	#puts "You chose hot"
-	#else
-	#puts "Please choose 1, 2 or 3."
+	puts "Your sauce is #{sauce}"
+	#x = gets.chomp
+	#puts "Your sauce is #{sauce}"
+	#tomato = sauce[0]
+	#bbq = sauce[1]
+	#hot = sauce[2]
+	#if x = tomato
+	#	puts "You chose tomato"
+	#elsif x = bbq
+	#	puts "You chose bbq"
+	#else x = hot
+	#	puts "You chose hot"
 	#end
 end
 
@@ -77,9 +78,9 @@ def delivery()
 		puts "Your order will be ready for pickup in 25 Minutes."
 	end
 	if time == 1
-		puts "Thanks for getting my pizza here in under 30 minutes, here is your tip #{tip=@cost*0.20}."
+		puts "Thanks for getting my pizza here in under 30 minutes, here is your tip #{tip=@cost*0.25}."
 	else time == 2
-		puts "Thanks for the pizza, here is yoru tip #{tip=@cost*0.10}"
+		puts "Thanks for the pizza, here is yoru tip #{tip=@cost*0.15}"
 	end
 end
 
